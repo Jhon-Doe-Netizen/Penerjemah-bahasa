@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penerjemah Bahasa</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Penerjemah Bahasa</h1>
+    <form method="POST">
+      <label for="text">Masukkan Teks:</label><br />
+      <textarea name="text" id="text" rows="4" cols="50"></textarea><br /><br />
+
+      <label for="language">Pilih Bahasa Tujuan:</label><br />
+      <select name="language" id="language">
+        <option value="en">Inggris</option>
+        <option value="id">Indonesia</option>
+        <option value="fr">Prancis</option>
+        <option value="es">Spanyol</option>
+        <option value="de">Jerman</option>
+        <option value="ar">Arab</option>
+        <!-- Tambahkan lebih banyak pilihan bahasa jika diperlukan --></select
+      ><br /><br />
+
+      <input type="submit" value="Terjemahkan" />
+    </form>
+
+    {% if translation %}
+    <h2>Hasil Terjemahan:</h2>
+    <p>{{ translation }}</p>
+    {% endif %}
+  </body>
+</html>
